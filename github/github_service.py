@@ -17,7 +17,7 @@ class GithubService:
             f'/repos/baptistelinel/{repository_name}/commits', headers=headers)
         if response['status_code'] != 200:
             raise Exception(
-                f"Request status is {response['status_code']}. Commit list seems to not be reachable. Github API returns response{response['json']}"
+                f"Request status is {response['status_code']}. Commit list seems to not be reachable. Github API returns response : {response['json']}"
             )
         for raw_commit in response['json']:
             commit = {

@@ -9,7 +9,5 @@ github_view = GithubViews(github_service)
 
 app_name = 'github'
 urlpatterns = [
-    path('commits',
-         github_view.commit_list,
-         name='commit_list'),
+    path('commits', github_view.commit_list, name='commit_list'),
 ]
