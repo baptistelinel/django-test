@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+</head>
+<body>
+    <form action="{% url 'github:commit_list' %}" method="post">
+    {% csrf_token %}
+        <label for="repository_name">Repository name : </label>
+        <input type="text" name="repository_name" id="repository_name">
+    <input type="submit" value="Submit">
+    </form>
+    {% if error %}
+        <p>{{ error }}</p>
+    {% endif %}
+</body>
+</html>

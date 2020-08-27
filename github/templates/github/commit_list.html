@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Commit list</title>
+</head>
+<body>
+    <h1>Commit list</h1>
+    <p>
+        <a href="{% url 'github:commit_list' %}">Go back to repository form</a>
+    </p>
+    {% if commit_list %}
+        {% for commit in commit_list %}
+            <ul>
+                <li>{{ commit.id }}</li>
+                <li>{{ commit.committer_name }}</li>
+                <li>{{ commit.date }}</li>
+                <li>{{ commit.message }}</li>
+            </ul>
+        {% endfor %}
+    {% else %}
+        <p>Not commit found for this repository.</p>
+    {% endif %}
+</body>
+</html>
